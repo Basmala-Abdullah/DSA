@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1734375179 source:c:\users\dell\documents\codeblocks\dsaday1_linkedlist\main.cpp
+	<iostream>
+	"node.h"
+
+1734375167 c:\users\dell\documents\codeblocks\dsaday1_linkedlist\node.h
+
+1734375161 source:c:\users\dell\documents\codeblocks\dsaday1_linkedlist\node.cpp
+	"node.h"
+
+1734376075 source:c:\users\dell\documents\codeblocks\dsaday1_linkedlist\linkedlist.cpp
+	"LinkedList.h"
+
+1734376091 c:\users\dell\documents\codeblocks\dsaday1_linkedlist\linkedlist.h
+	<iostream>
+	"node.h"
+
