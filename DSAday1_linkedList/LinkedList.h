@@ -29,7 +29,9 @@ public:
 
     int GetDataByIndex(int index);
 
+    int insertByIndex(int index ,int data);
 
+    void mergeLinkedList(LinkedList& l);
 };
 
 
