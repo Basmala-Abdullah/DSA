@@ -21,6 +21,9 @@ void LinkedList::add(int data){
 
     }
 
+
+
+
 Node * LinkedList::getNodeUsingData(int data){
         Node *current = head;
         while(current){
@@ -141,4 +144,51 @@ int LinkedList::GetDataByIndex(int index){
         }
         return curr->data;
     }
+
+int LinkedList::insertByIndex(int index ,int data){
+
+    if(index>length || index<0){
+        cout<<"Index is out of range"<<endl;
+        return 0;
+    }
+    if(index == length){
+        this->add(data);
+        return 1;
+    }
+    Node *curr= head;
+    for(int i=0;i<index;i++){
+        curr=curr->next;
+    }
+
+    Node* newNode = new Node(data);
+    newNode->next=curr;
+    newNode->prev=curr->prev;
+    if (curr->prev != nullptr) {
+        curr->prev->next = newNode;
+    }else{
+        head=newNode;
+    }
+    curr->prev = newNode;
+    length++;
+    return 1;
+}
+
+
+void LinkedList::mergeLinkedList(LinkedList& l){
+    if(length!=0){
+        //current list not empty
+        tail->next=l.head;
+        l.head->prev=tail;
+        tail=l.tail;
+        length+= l.length;
+    }else{
+        //current list is empty
+        head=l.head;
+        tail=l.tail;
+    }
+    //to clear l and avoid shared memory
+    l.head = nullptr;
+    l.tail = nullptr;
+    l.length = 0;
+}
 
